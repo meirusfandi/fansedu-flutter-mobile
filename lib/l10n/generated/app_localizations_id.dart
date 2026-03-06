@@ -95,8 +95,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get registerSubtitle => 'Buat akun Anda';
 
   @override
-  String get forgotPasswordSubtitle =>
-      'Masukkan email untuk reset kata sandi';
+  String get forgotPasswordSubtitle => 'Masukkan email untuk reset kata sandi';
 
   @override
   String get dontHaveAccount => 'Belum punya akun?';
@@ -112,4 +111,43 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get resetLinkSent => 'Link reset terkirim. Cek email Anda.';
+
+  @override
+  String get dashboard => 'Beranda';
+
+  @override
+  String get notifications => 'Notifikasi';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get welcomeBack => 'Selamat datang kembali';
+
+  @override
+  String get myProgress => 'Progres Saya';
+
+  @override
+  String get courses => 'Kursus';
+
+  @override
+  String get contests => 'Kontes';
+
+  @override
+  String get recentActivity => 'Aktivitas Terbaru';
+
+  @override
+  String get noNotifications => 'Belum ada notifikasi';
+
+  @override
+  String get noNotificationsDesc => 'Notifikasi akan muncul di sini';
+
+  @override
+  String get editProfile => 'Edit Profil';
+
+  @override
+  String get account => 'Akun';
+
+  @override
+  String get logout => 'Keluar';
 }

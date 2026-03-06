@@ -33,5 +33,18 @@
   "alreadyHaveAccount": "Sudah punya akun?",
   "sendResetLink": "Kirim Link Reset",
   "backToLogin": "Kembali ke Masuk",
-  "resetLinkSent": "Link reset terkirim. Cek email Anda."
+  "resetLinkSent": "Link reset terkirim. Cek email Anda.",
+  "dashboard": "Beranda",
+  "notifications": "Notifikasi",
+  "profile": "Profil",
+  "welcomeBack": "Selamat datang kembali",
+  "myProgress": "Progres Saya",
+  "courses": "Kursus",
+  "contests": "Kontes",
+  "recentActivity": "Aktivitas Terbaru",
+  "noNotifications": "Belum ada notifikasi",
+  "noNotificationsDesc": "Notifikasi akan muncul di sini",
+  "editProfile": "Edit Profil",
+  "account": "Akun",
+  "logout": "Keluar"
 }

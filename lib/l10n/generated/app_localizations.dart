@@ -158,31 +158,163 @@ abstract class AppLocalizations {
   /// **'Language'**
   String get language;
 
+  /// No description provided for @introTitle1.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Fansedu'**
   String get introTitle1;
+
+  /// No description provided for @introDesc1.
+  ///
+  /// In en, this message translates to:
+  /// **'Olympiad Informatics Academy for learning and competition.'**
   String get introDesc1;
+
+  /// No description provided for @introTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn & Compete'**
   String get introTitle2;
+
+  /// No description provided for @introDesc2.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice with structured modules and join olympiad contests.'**
   String get introDesc2;
+
+  /// No description provided for @introTitle3.
+  ///
+  /// In en, this message translates to:
+  /// **'Track Your Progress'**
   String get introTitle3;
+
+  /// No description provided for @introDesc3.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor your growth and achieve your goals.'**
   String get introDesc3;
+
+  /// No description provided for @introSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
   String get introSkip;
+
+  /// No description provided for @introNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
   String get introNext;
+
+  /// No description provided for @introGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
   String get introGetStarted;
 
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
   String get login;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
   String get register;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password'**
   String get forgotPassword;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
   String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
   String get password;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
   String get confirmPassword;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
   String get name;
+
+  /// No description provided for @loginSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to your account'**
   String get loginSubtitle;
+
+  /// No description provided for @registerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your account'**
   String get registerSubtitle;
+
+  /// No description provided for @forgotPasswordSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email to reset password'**
   String get forgotPasswordSubtitle;
+
+  /// No description provided for @dontHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
   String get dontHaveAccount;
+
+  /// No description provided for @alreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
   String get alreadyHaveAccount;
+
+  /// No description provided for @sendResetLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Reset Link'**
   String get sendResetLink;
+
+  /// No description provided for @backToLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Login'**
   String get backToLogin;
+
+  /// No description provided for @resetLinkSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset link sent. Check your email.'**
   String get resetLinkSent;
+
+  String get dashboard;
+  String get notifications;
+  String get profile;
+  String get welcomeBack;
+  String get myProgress;
+  String get courses;
+  String get contests;
+  String get recentActivity;
+  String get noNotifications;
+  String get noNotificationsDesc;
+  String get editProfile;
+  String get account;
+  String get logout;
 }
 
 class _AppLocalizationsDelegate

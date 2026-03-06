@@ -2,6 +2,18 @@
 
 Proyek memakai **flavor** untuk environment: `dev`, `staging`, `prod`.
 
+## Entry points (main)
+
+| File            | Environment | Penggunaan                          |
+|-----------------|-------------|-------------------------------------|
+| `lib/main_dev.dart` | Dev         | Development, API dev                |
+| `lib/main_stg.dart` | Staging     | Staging, API staging                |
+| `lib/main.dart`     | Prod        | Production, API production          |
+
+Di VS Code / Cursor: pilih **Fansedu (dev)**, **Fansedu (staging)**, atau **Fansedu (prod)** di dropdown Run and Debug.
+
+Script: `./scripts/run_dev.sh`, `./scripts/run_stg.sh`, `./scripts/run_prod.sh`.
+
 ## Dart (Env)
 
 - **FLAVOR**: `dev` | `staging` | `prod` (via `--dart-define=FLAVOR=...`)
@@ -20,17 +32,17 @@ Product flavors di `android/app/build.gradle.kts`:
 | staging  | id.web.fansedu.fansedu_flutter_mobile.staging | Fansedu Staging |
 | prod     | id.web.fansedu.fansedu_flutter_mobile    | Fansedu           |
 
-**Jalankan (harus pilih flavor):**
+**Jalankan:**
 
 ```bash
-# Dev (default FLAVOR=dev di Env kalau tidak di-define)
-fvm flutter run --flavor dev --dart-define=FLAVOR=dev
+# Dev
+fvm flutter run -t lib/main_dev.dart --flavor dev --dart-define=FLAVOR=dev --dart-define=API_BASE_URL=https://api-dev.example.com
 
-# Staging + API URL
-fvm flutter run --flavor staging --dart-define=FLAVOR=staging --dart-define=API_BASE_URL=https://staging-api.example.com
+# Staging
+fvm flutter run -t lib/main_stg.dart --flavor staging --dart-define=FLAVOR=staging --dart-define=API_BASE_URL=https://api-staging.example.com
 
 # Prod
-fvm flutter run --flavor prod --dart-define=FLAVOR=prod --dart-define=API_BASE_URL=https://api.example.com
+fvm flutter run -t lib/main.dart --flavor prod --dart-define=FLAVOR=prod --dart-define=API_BASE_URL=https://api.fansedu.web.id
 ```
 
 **Build release:**

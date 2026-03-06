@@ -33,5 +33,18 @@
   "alreadyHaveAccount": "Already have an account?",
   "sendResetLink": "Send Reset Link",
   "backToLogin": "Back to Login",
-  "resetLinkSent": "Reset link sent. Check your email."
+  "resetLinkSent": "Reset link sent. Check your email.",
+  "dashboard": "Dashboard",
+  "notifications": "Notifications",
+  "profile": "Profile",
+  "welcomeBack": "Welcome back",
+  "myProgress": "My Progress",
+  "courses": "Courses",
+  "contests": "Contests",
+  "recentActivity": "Recent Activity",
+  "noNotifications": "No notifications yet",
+  "noNotificationsDesc": "Notifications will appear here",
+  "editProfile": "Edit Profile",
+  "account": "Account",
+  "logout": "Logout"
 }

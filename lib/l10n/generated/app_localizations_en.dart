@@ -95,11 +95,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registerSubtitle => 'Create your account';
 
   @override
-  String get forgotPasswordSubtitle =>
-      'Enter your email to reset password';
+  String get forgotPasswordSubtitle => 'Enter your email to reset password';
 
   @override
-  String get dontHaveAccount => "Don't have an account?";
+  String get dontHaveAccount => 'Don\'t have an account?';
 
   @override
   String get alreadyHaveAccount => 'Already have an account?';
@@ -112,4 +111,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resetLinkSent => 'Reset link sent. Check your email.';
+
+  @override
+  String get dashboard => 'Dashboard';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get welcomeBack => 'Welcome back';
+
+  @override
+  String get myProgress => 'My Progress';
+
+  @override
+  String get courses => 'Courses';
+
+  @override
+  String get contests => 'Contests';
+
+  @override
+  String get recentActivity => 'Recent Activity';
+
+  @override
+  String get noNotifications => 'No notifications yet';
+
+  @override
+  String get noNotificationsDesc => 'Notifications will appear here';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get account => 'Account';
+
+  @override
+  String get logout => 'Logout';
 }

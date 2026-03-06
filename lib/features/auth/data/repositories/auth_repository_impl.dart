@@ -5,6 +5,7 @@ import 'package:fansedu_flutter_mobile/core/error/failures.dart';
 import 'package:fansedu_flutter_mobile/features/auth/data/datasources/auth_remote_datasource.dart';
 import 'package:fansedu_flutter_mobile/features/auth/data/datasources/auth_storage.dart';
 import 'package:fansedu_flutter_mobile/features/auth/domain/entities/auth_result_entity.dart';
+import 'package:fansedu_flutter_mobile/features/auth/domain/entities/user_entity.dart';
 import 'package:fansedu_flutter_mobile/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
@@ -25,6 +26,7 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       final res = await _remote.login(email: email, password: password);
       await _storage.saveToken(res.token);
+      await _storage.saveUser(res.user.toEntity());
       return Right(
         AuthResultEntity(token: res.token, user: res.user.toEntity()),
       );
@@ -49,6 +51,7 @@ class AuthRepositoryImpl implements AuthRepository {
         password: password,
       );
       await _storage.saveToken(res.token);
+      await _storage.saveUser(res.user.toEntity());
       return Right(
         AuthResultEntity(token: res.token, user: res.user.toEntity()),
       );
@@ -81,6 +84,12 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<void> clearToken() => _storage.clearToken();
+
+  @override
+  Future<UserEntity?> getStoredUser() => _storage.getStoredUser();
+
+  @override
+  Future<void> saveUser(UserEntity user) => _storage.saveUser(user);
 
   String _dioErrorMessage(DioException e) {
     final data = e.response?.data;

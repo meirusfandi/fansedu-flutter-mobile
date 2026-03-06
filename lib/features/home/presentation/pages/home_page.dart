@@ -2,14 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:fansedu_flutter_mobile/core/constants/app_assets.dart';
-import 'package:fansedu_flutter_mobile/core/injection/injection.dart';
 import 'package:fansedu_flutter_mobile/core/theme/theme_cubit.dart';
-import 'package:fansedu_flutter_mobile/features/auth/domain/repositories/auth_repository.dart';
-import 'package:fansedu_flutter_mobile/features/auth/presentation/pages/login_page.dart';
+import 'package:fansedu_flutter_mobile/features/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:fansedu_flutter_mobile/features/notification/presentation/pages/notification_page.dart';
+import 'package:fansedu_flutter_mobile/features/profile/presentation/pages/profile_page.dart';
 import 'package:fansedu_flutter_mobile/l10n/generated/app_localizations.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
+
+  static const List<_TabItem> _tabs = [
+    _TabItem(page: DashboardPage(), labelKey: 'dashboard', icon: Icons.dashboard_rounded),
+    _TabItem(page: NotificationPage(), labelKey: 'notifications', icon: Icons.notifications_rounded),
+    _TabItem(page: ProfilePage(), labelKey: 'profile', icon: Icons.person_rounded),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +40,7 @@ class HomePage extends StatelessWidget {
               errorBuilder: (_, __, ___) => const Icon(Icons.school),
             ),
             const SizedBox(width: 10),
-            Text(l10n.appTitle),
+            Text(_tabs[_currentIndex].label(l10n)),
           ],
         ),
         actions: [
@@ -36,28 +49,54 @@ class HomePage extends StatelessWidget {
             tooltip: l10n.theme,
             onPressed: () => context.read<ThemeCubit>().toggleDark(),
           ),
-          IconButton(
-            icon: const Icon(Icons.logout_outlined),
-            tooltip: 'Logout',
-            onPressed: () async {
-              await sl<AuthRepository>().clearToken();
-              if (!context.mounted) return;
-              Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute<void>(builder: (_) => const LoginPage()),
-                (_) => false,
-              );
-            },
+        ],
+      ),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _tabs.map((t) => t.page).toList(),
+      ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _currentIndex,
+        onDestinationSelected: (i) => setState(() => _currentIndex = i),
+        destinations: [
+          NavigationDestination(
+            icon: const Icon(Icons.dashboard_outlined),
+            selectedIcon: const Icon(Icons.dashboard_rounded),
+            label: l10n.dashboard,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.notifications_outlined),
+            selectedIcon: const Icon(Icons.notifications_rounded),
+            label: l10n.notifications,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.person_outline_rounded),
+            selectedIcon: const Icon(Icons.person_rounded),
+            label: l10n.profile,
           ),
         ],
       ),
-      body: Center(
-        child: Text(
-          l10n.appTitle,
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-        ),
-      ),
     );
+  }
+}
+
+class _TabItem {
+  const _TabItem({
+    required this.page,
+    required this.labelKey,
+    required this.icon,
+  });
+
+  final Widget page;
+  final String labelKey;
+  final IconData icon;
+
+  String label(AppLocalizations l10n) {
+    return switch (labelKey) {
+      'dashboard' => l10n.dashboard,
+      'notifications' => l10n.notifications,
+      'profile' => l10n.profile,
+      _ => labelKey,
+    };
   }
 }
