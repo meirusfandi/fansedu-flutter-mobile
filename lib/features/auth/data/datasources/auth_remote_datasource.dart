@@ -1,5 +1,3 @@
-import 'package:dio/dio.dart';
-
 import 'package:fansedu_flutter_mobile/core/network/api_client.dart';
 import 'package:fansedu_flutter_mobile/features/auth/data/models/auth_response_model.dart';
 
@@ -26,9 +24,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       '/auth/login',
       data: {'email': email, 'password': password},
     );
-    return AuthResponseModel.fromJson(
-      response.data! as Map<String, dynamic>,
-    );
+    return AuthResponseModel.fromJson(response.data!);
   }
 
   @override
@@ -45,9 +41,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         'password': password,
       },
     );
-    return AuthResponseModel.fromJson(
-      response.data! as Map<String, dynamic>,
-    );
+    return AuthResponseModel.fromJson(response.data!);
   }
 
   @override

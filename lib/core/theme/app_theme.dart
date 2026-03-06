@@ -38,7 +38,6 @@ class AppTheme {
           primaryContainer: AppColors.primary,
           secondary: AppColors.secondary,
           surface: AppColors.darkSurface,
-          background: AppColors.darkBackground,
         ),
         appBarTheme: const AppBarTheme(
           centerTitle: true,
